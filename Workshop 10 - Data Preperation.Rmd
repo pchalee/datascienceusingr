@@ -28,3 +28,13 @@ str(sales)
 ```{r}
 table(sales$Opportunity.Result)
 ```
+
+## Explore Data
+```{r}
+# Plot the histogram
+hist(sales$, breaks=10, prob=T)
+
+# Plot the density curve
+lines(density(iris$Sepal.Length))
+
+```
