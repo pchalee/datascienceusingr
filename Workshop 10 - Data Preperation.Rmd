@@ -1,0 +1,30 @@
+---
+title: "Workshop 10 - Data Preperation"
+author: "Veerasak Kritsanapraphan"
+date: "11/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Getting Data
+
+Getting data from Sales win Loss Dataset
+
+```{r}
+sales <- read.csv("WA_Fn-UseC_-Sales-Win-Loss.csv", header = TRUE)
+head(sales)
+```
+
+## Visualized Data
+
+```{r}
+str(sales)
+```
+
+## See Opportunity Table
+```{r}
+table(sales$Opportunity.Result)
+```

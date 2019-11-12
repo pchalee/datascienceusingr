@@ -1,7 +1,9 @@
 ---
 title: "Workshop 4 Solutions"
 author: "Veerasak Kritsanapraphan"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
 #### 1. Data practice
