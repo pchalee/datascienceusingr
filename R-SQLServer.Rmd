@@ -1,0 +1,55 @@
+---
+title: "R and MS SQL Server"
+author: "Veerasak Kritsanapraphan"
+date: "11/12/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Using ODBC
+
+R can use ODBC to connect to MS SQLServer, starting with loading odbc library
+
+```{r}
+library(odbc)
+```
+
+## Create Connection String
+
+```{r}
+con <- dbConnect(odbc(),
+                 #Driver = "Simba SQL Server ODBC Driver",
+                 Driver = "ODBC Driver 17 for SQL Server",
+                 Server = "veedb.database.windows.net",
+                 Database = "veedb",
+                 UID = "veerasak",
+                 PWD = "#admin1234", ##PWD = rstudioapi::askForPassword("Database password"),
+                 Port = 1433)
+```
+
+## Query Database
+
+query database and save it to Data Frame
+
+```{r}
+customer <- dbGetQuery(con, "SELECT * FROM SalesLT.Customer")
+```
+
+## Show Structure of Data
+```{r}
+str(customer)
+```
+
+## Show Data
+```{r}
+head(customer)
+```
+
+## Disconnect it
+
+```{r}
+dbDisconnect(con)
+```
