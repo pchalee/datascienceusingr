@@ -3,8 +3,9 @@ title: "Workshop 8 Solutions"
 author: "Veerasak Kritsanapraphan"
 date: ''
 output:
-  word_document: default
+  pdf_document: default
   html_document: default
+  word_document: default
 ---
 
 We'll begin by loading all the packages we might need.
@@ -74,7 +75,7 @@ mpg.t.test
 with(Cars93, t.test(x = MPG.highway[Origin == "USA"], y = MPG.highway[Origin == "non-USA"], alternative="greater"))
 ```
 
-## Plot Normal Distribution
+## Plot t-test
 ```{r}
 #install.packages("devtools")
 #devtools::install_github("cardiomoon/webr")

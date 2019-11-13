@@ -74,3 +74,19 @@ library(ggplot2)
 # Note fullrange = TRUE is used here to extend the 'mother.smokes = yes' line beyond the maximum age (35) in this group
 qplot(data = birthwt, x = mother.age, y = birthwt.grams, colour = mother.smokes) + stat_smooth(method = "lm", fullrange = TRUE)
 ```
+
+## Prediction
+
+```{r}
+predict(birthwt.lm, newdata = birthwt[20,])
+birthwt[20,"birthwt.grams"]
+```
+## Confident Interval
+```{r}
+predict(birthwt.lm, newdata = birthwt[20,], interval = "confidence")
+```
+
+## Prediction Interval
+```{r}
+predict(birthwt.lm, newdata = birthwt[20,], interval = "prediction")
+```
